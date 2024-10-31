@@ -103,30 +103,12 @@ namespace CapaLogica.Entidades
         //}
 
 
-        // Método opcional para validar credenciales del usuario (para login)
-        public bool ValidarUsuario(string usuario, string contraseña)
-        {
-            try
-            {
-                DataTable resultado = usuarioQ.ReadUser(usuario);
-                if (resultado.Rows.Count > 0)
-                {
-                    string contraseñaGuardada = resultado.Rows[0]["contraseña_actual"].ToString();
-                    return contraseñaGuardada == contraseña;
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error en la validación de usuario: {ex.Message}");
-                throw;
-            }
-        }
+        
 
-        // Método para validar datos del usuario (puedes personalizarlo según tus necesidades)
+        // Método para validar datos del usuario
         private bool ValidarDatosUsuario(cls_Usuario usuario)
         {
-            // Ejemplo de validación básica, puedes agregar más validaciones según tus necesidades
+            
             if (string.IsNullOrEmpty(usuario.Usuario) || string.IsNullOrEmpty(usuario.ContraseñaActual))
             {
                 return false;
