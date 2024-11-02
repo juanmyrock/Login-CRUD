@@ -27,34 +27,22 @@ namespace CapaVistas.MenuAdmin
             formHijo.Show();
         }
 
-        private void altaUserScreen_Click(object sender, EventArgs e)
-        {
-            frmAltaUser frmAltaUser = new frmAltaUser();
-            AbrirFrmHijo(frmAltaUser);
-        }
-
-        private void modifUserScreen_Click(object sender, EventArgs e)
-        {
-            frmModifUser frmModifUser = new frmModifUser();
-            AbrirFrmHijo(frmModifUser);
-        }
-
-        private void deleteUserScreen_Click(object sender, EventArgs e)
-        {
-            frmDeleteUser frmDeleteUser = new frmDeleteUser();
-            AbrirFrmHijo(frmDeleteUser);
-        }
-
-        private void configScreen_Click(object sender, EventArgs e)
+        private void btnConfigScreen_Click(object sender, EventArgs e)
         {
             frmConfigLogin frmConfig = new frmConfigLogin();
             AbrirFrmHijo(frmConfig);
         }
 
+        private void btnMantUser_Click(object sender, EventArgs e)
+        {
+            frmMantUser frmUser = new frmMantUser();
+            AbrirFrmHijo(frmUser);
+        }
 
-
-        
-
-        
+        private void btnMantEmpleado_Click(object sender, EventArgs e)
+        {
+            frmMantEmpleado frmConfig = new frmMantEmpleado();
+            AbrirFrmHijo(frmConfig);
+        }
     }
 }

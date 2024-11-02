@@ -10,11 +10,33 @@ namespace CapaLogica.Entidades
     {
         private cls_UsuarioQ usuarioQ = new cls_UsuarioQ();
 
-        public DataTable BuscarUsuario(string datos)
+        public List<cls_Usuario> BuscarUsuario(string datos)
         {
             try
             {
-                return usuarioQ.ReadUser(datos);
+                DataTable resultado = usuarioQ.ReadUser(datos);
+                List<cls_Usuario> listaUsuarios = new List<cls_Usuario>();
+
+                foreach (DataRow row in resultado.Rows)
+                {
+                    cls_Usuario usuario = new cls_Usuario
+                    {
+                        IdUsuario = Convert.ToInt32(row["id_usuario"]),
+                        IdEmpleado = Convert.ToInt32(row["id_empleado"]),
+                        FechaAlta = Convert.ToDateTime(row["fecha_alta"]),
+                        FechaBaja = row["fecha_baja"] != DBNull.Value ? Convert.ToDateTime(row["fecha_baja"]) : (DateTime?)null,
+                        Estado = row["estado"] != DBNull.Value ? Convert.ToBoolean(row["estado"]) : false,
+                        Usuario = row["usuario"].ToString(),
+                        ContraseñaActual = row["contraseña_actual"].ToString(),
+                        FechaUltIngreso = row["fecha_ult_ingreso"] != DBNull.Value ? Convert.ToDateTime(row["fecha_ult_ingreso"]) : (DateTime?)null,
+                        ContraseñaAleatoria = row["contraseña_aleatoria"].ToString(),
+                        IdPregunta = Convert.ToInt32(row["id_pregunta"])
+                    };
+
+                    listaUsuarios.Add(usuario);
+                }
+
+                return listaUsuarios;
             }
             catch (Exception ex)
             {
@@ -86,23 +108,6 @@ namespace CapaLogica.Entidades
         //{
         //    return usuarioQ.ObtenerUsuarios();
         //}
-
-        // Método para verificar tipo de usuario y abrir el formulario adecuado
-        //public void AbrirFormularioSegunUsuario(cls_Usuario usuario)
-        //{
-        //    if (usuario.Familia_Usuario == "Admin")
-        //    {
-        //        frmMenuAdmin menuAdmin = new frmMenuAdmin();
-        //        menuAdmin.Show();
-        //    }
-        //    else
-        //    {
-        //        frmMenuUser menuUser = new frmMenuUser();
-        //        menuUser.Show();
-        //    }
-        //}
-
-
         
 
         // Método para validar datos del usuario

@@ -29,15 +29,9 @@
         private void InitializeComponent()
         {
             this.barMenu = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaUserScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifUserScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteUserScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaEmpleScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifEmpleScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteEmpleScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.configScreen = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMantUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMantEmpleado = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConfigScreen = new System.Windows.Forms.ToolStripMenuItem();
             this.barMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +41,9 @@
             this.barMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 5);
             this.barMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.configScreen});
+            this.btnMantUser,
+            this.btnMantEmpleado,
+            this.btnConfigScreen});
             this.barMenu.Location = new System.Drawing.Point(0, 0);
             this.barMenu.Name = "barMenu";
             this.barMenu.Padding = new System.Windows.Forms.Padding(6, 6, 0, 6);
@@ -57,85 +51,39 @@
             this.barMenu.TabIndex = 0;
             this.barMenu.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // btnMantUser
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaUserScreen,
-            this.modifUserScreen,
-            this.deleteUserScreen});
-            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(106, 20);
-            this.toolStripMenuItem1.Text = "ABM Usuarios";
+            this.btnMantUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMantUser.Name = "btnMantUser";
+            this.btnMantUser.Size = new System.Drawing.Size(106, 20);
+            this.btnMantUser.Text = "ABM Usuarios";
+            this.btnMantUser.Click += new System.EventHandler(this.btnMantUser_Click);
             // 
-            // altaUserScreen
+            // btnMantEmpleado
             // 
-            this.altaUserScreen.Name = "altaUserScreen";
-            this.altaUserScreen.Size = new System.Drawing.Size(241, 22);
-            this.altaUserScreen.Text = "Alta de Usuario";
-            this.altaUserScreen.Click += new System.EventHandler(this.altaUserScreen_Click);
+            this.btnMantEmpleado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMantEmpleado.Name = "btnMantEmpleado";
+            this.btnMantEmpleado.Size = new System.Drawing.Size(122, 20);
+            this.btnMantEmpleado.Text = "ABM Empleados";
+            this.btnMantEmpleado.Click += new System.EventHandler(this.btnMantEmpleado_Click);
             // 
-            // modifUserScreen
+            // btnConfigScreen
             // 
-            this.modifUserScreen.Name = "modifUserScreen";
-            this.modifUserScreen.Size = new System.Drawing.Size(241, 22);
-            this.modifUserScreen.Text = "Modificaciones de Usuario";
-            this.modifUserScreen.Click += new System.EventHandler(this.modifUserScreen_Click);
-            // 
-            // deleteUserScreen
-            // 
-            this.deleteUserScreen.Name = "deleteUserScreen";
-            this.deleteUserScreen.Size = new System.Drawing.Size(241, 22);
-            this.deleteUserScreen.Text = "Eliminacion de Usuario";
-            this.deleteUserScreen.Click += new System.EventHandler(this.deleteUserScreen_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaEmpleScreen,
-            this.modifEmpleScreen,
-            this.deleteEmpleScreen});
-            this.toolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(122, 20);
-            this.toolStripMenuItem2.Text = "ABM Empleados";
-            // 
-            // altaEmpleScreen
-            // 
-            this.altaEmpleScreen.Name = "altaEmpleScreen";
-            this.altaEmpleScreen.Size = new System.Drawing.Size(257, 22);
-            this.altaEmpleScreen.Text = "Alta de Empleado";
-            // 
-            // modifEmpleScreen
-            // 
-            this.modifEmpleScreen.Name = "modifEmpleScreen";
-            this.modifEmpleScreen.Size = new System.Drawing.Size(257, 22);
-            this.modifEmpleScreen.Text = "Modificaciones de Empleado";
-            // 
-            // deleteEmpleScreen
-            // 
-            this.deleteEmpleScreen.Name = "deleteEmpleScreen";
-            this.deleteEmpleScreen.Size = new System.Drawing.Size(257, 22);
-            this.deleteEmpleScreen.Text = "Eliminacion de Empleado";
-            // 
-            // configScreen
-            // 
-            this.configScreen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.configScreen.Name = "configScreen";
-            this.configScreen.Size = new System.Drawing.Size(122, 20);
-            this.configScreen.Text = "Configuraciones";
-            this.configScreen.Click += new System.EventHandler(this.configScreen_Click);
+            this.btnConfigScreen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnConfigScreen.Name = "btnConfigScreen";
+            this.btnConfigScreen.Size = new System.Drawing.Size(122, 20);
+            this.btnConfigScreen.Text = "Configuraciones";
+            this.btnConfigScreen.Click += new System.EventHandler(this.btnConfigScreen_Click);
             // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.BackgroundImage = global::CapaVista.Properties.Resources.mantSoftware;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.barMenu);
-            this.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.barMenu;
@@ -153,14 +101,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip barMenu;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem configScreen;
-        private System.Windows.Forms.ToolStripMenuItem altaUserScreen;
-        private System.Windows.Forms.ToolStripMenuItem modifUserScreen;
-        private System.Windows.Forms.ToolStripMenuItem deleteUserScreen;
-        private System.Windows.Forms.ToolStripMenuItem altaEmpleScreen;
-        private System.Windows.Forms.ToolStripMenuItem modifEmpleScreen;
-        private System.Windows.Forms.ToolStripMenuItem deleteEmpleScreen;
+        private System.Windows.Forms.ToolStripMenuItem btnMantUser;
+        private System.Windows.Forms.ToolStripMenuItem btnMantEmpleado;
+        private System.Windows.Forms.ToolStripMenuItem btnConfigScreen;
     }
 }

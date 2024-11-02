@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace CapaVista.MenuAdmin.ABM_User
 {
-    public partial class frmDeleteUser : Form
+    public partial class frmMantEmpleado : Form
     {
-        public frmDeleteUser()
+        public frmMantEmpleado()
         {
             InitializeComponent();
         }

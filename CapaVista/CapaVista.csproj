@@ -65,23 +65,17 @@
     <Compile Include="frmRecuperarPass.designer.cs">
       <DependentUpon>frmRecuperarPass.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAdmin\ABM User\frmDeleteUser.cs">
+    <Compile Include="MenuAdmin\ABM User\frmMantEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin\ABM User\frmDeleteUser.Designer.cs">
-      <DependentUpon>frmDeleteUser.cs</DependentUpon>
+    <Compile Include="MenuAdmin\ABM User\frmMantEmpleado.Designer.cs">
+      <DependentUpon>frmMantEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAdmin\ABM User\frmModifUser.cs">
+    <Compile Include="MenuAdmin\ABM User\frmMantUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin\ABM User\frmModifUser.Designer.cs">
-      <DependentUpon>frmModifUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuAdmin\ABM User\frmAltaUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuAdmin\ABM User\frmAltaUser.Designer.cs">
-      <DependentUpon>frmAltaUser.cs</DependentUpon>
+    <Compile Include="MenuAdmin\ABM User\frmMantUser.Designer.cs">
+      <DependentUpon>frmMantUser.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAdmin\frmAdmin.cs">
       <SubType>Form</SubType>
@@ -106,14 +100,11 @@
     <EmbeddedResource Include="frmRecuperarPass.resx">
       <DependentUpon>frmRecuperarPass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin\ABM User\frmDeleteUser.resx">
-      <DependentUpon>frmDeleteUser.cs</DependentUpon>
+    <EmbeddedResource Include="MenuAdmin\ABM User\frmMantEmpleado.resx">
+      <DependentUpon>frmMantEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin\ABM User\frmModifUser.resx">
-      <DependentUpon>frmModifUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin\ABM User\frmAltaUser.resx">
-      <DependentUpon>frmAltaUser.cs</DependentUpon>
+    <EmbeddedResource Include="MenuAdmin\ABM User\frmMantUser.resx">
+      <DependentUpon>frmMantUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>

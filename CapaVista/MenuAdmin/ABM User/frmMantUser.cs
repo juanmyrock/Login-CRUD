@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace CapaVista.MenuAdmin.ABM_User
 {
-    public partial class frmModifUser : Form
+    public partial class frmMantUser : Form
     {
-        public frmModifUser()
+        public frmMantUser()
         {
             InitializeComponent();
         }
