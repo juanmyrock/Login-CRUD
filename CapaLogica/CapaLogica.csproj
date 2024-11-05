@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\cls_EmpleadoManager.cs" />
     <Compile Include="Entidades\cls_UserManager.cs" />
     <Compile Include="Login\cls_LoginManager.cs" />
     <Compile Include="Login\cls_PasswordManager.cs" />

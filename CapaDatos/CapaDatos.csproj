@@ -45,6 +45,7 @@
     <Compile Include="ConexionBD\cls_ConexionBD.cs" />
     <Compile Include="ConexionBD\cls_EjecutarQ.cs" />
     <Compile Include="Entidades\cls_ConfigSeguridadQ.cs" />
+    <Compile Include="Entidades\cls_EmpleadoQ.cs" />
     <Compile Include="Entidades\cls_LoginQ.cs" />
     <Compile Include="Entidades\cls_UsuarioQ.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

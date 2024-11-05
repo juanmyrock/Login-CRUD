@@ -34,7 +34,7 @@
             this.grpBoxDatosEmp = new System.Windows.Forms.GroupBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.chkEstadoModif = new System.Windows.Forms.CheckBox();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.txtNumCalle = new System.Windows.Forms.TextBox();
@@ -93,7 +93,7 @@
             // 
             this.grpBoxDatosEmp.Controls.Add(this.txtCelular);
             this.grpBoxDatosEmp.Controls.Add(this.label39);
-            this.grpBoxDatosEmp.Controls.Add(this.chkEstadoModif);
+            this.grpBoxDatosEmp.Controls.Add(this.chkEstado);
             this.grpBoxDatosEmp.Controls.Add(this.label5);
             this.grpBoxDatosEmp.Controls.Add(this.cmbCargo);
             this.grpBoxDatosEmp.Controls.Add(this.txtNumCalle);
@@ -139,18 +139,18 @@
             this.label39.TabIndex = 64;
             this.label39.Text = "Celular:";
             // 
-            // chkEstadoModif
+            // chkEstado
             // 
-            this.chkEstadoModif.AutoSize = true;
-            this.chkEstadoModif.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkEstadoModif.Checked = true;
-            this.chkEstadoModif.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.chkEstadoModif.Location = new System.Drawing.Point(865, 28);
-            this.chkEstadoModif.Name = "chkEstadoModif";
-            this.chkEstadoModif.Size = new System.Drawing.Size(65, 17);
-            this.chkEstadoModif.TabIndex = 63;
-            this.chkEstadoModif.Text = "Estado: ";
-            this.chkEstadoModif.UseVisualStyleBackColor = true;
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkEstado.Checked = true;
+            this.chkEstado.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.chkEstado.Location = new System.Drawing.Point(865, 28);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(65, 17);
+            this.chkEstado.TabIndex = 63;
+            this.chkEstado.Text = "Estado: ";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -455,7 +455,7 @@
         private System.Windows.Forms.GroupBox grpBoxDatosEmp;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.CheckBox chkEstadoModif;
+        private System.Windows.Forms.CheckBox chkEstado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.TextBox txtNumCalle;

@@ -1,10 +1,13 @@
-﻿using System;
+﻿using CapaLogica.Entidades;
+using System;
 using System.Windows.Forms;
 
 namespace CapaVista.MenuAdmin.ABM_User
 {
     public partial class frmMantEmpleado : Form
     {
+        cls_EmpleadoManager empleadoManager = new cls_EmpleadoManager();
+
         public frmMantEmpleado()
         {
             InitializeComponent();
@@ -32,5 +35,37 @@ namespace CapaVista.MenuAdmin.ABM_User
                 this.Close();
             }
         }
+
+
+
+        //private void CargarEmpleadoEnFormulario(int idEmpleado)
+        //{
+        //    empleadoManager.ObtenerEmpleadoPorId(idEmpleado);
+
+        //    if (empleadoManager != null)
+        //    {
+        //        AsignarValoresFormulario(empleadoManager);
+        //    }
+        //}
+
+        //private void AsignarValoresFormulario()
+        //{
+        //    empleadoManager.AsignarValoresEmpleado(empleado,
+        //txtNombre.Text,
+        //txtApellido.Text,
+        //Convert.ToInt32(cmbSexo.SelectedValue),
+        //Convert.ToInt32(cmbTipoDNI.SelectedValue),
+        //txtDNI.Text,
+        //dateNacimiento.Value,
+        //txtEmail.Text,
+        //txtCelular.Text,
+        //Convert.ToInt32(cmbLocalidad.SelectedValue),
+        //txtCalle.Text,
+        //Convert.ToInt32(txtNumCalle.Text),
+        //Convert.ToInt32(cmbCargo.SelectedValue),
+        //chkEstado.Checked);
+        //}
+
+
     }
 }

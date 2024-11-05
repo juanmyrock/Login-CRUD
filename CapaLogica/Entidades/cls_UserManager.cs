@@ -102,14 +102,6 @@ namespace CapaLogica.Entidades
             }
         }
 
-
-        // Método para listar todos los usuarios
-        //public List<cls_Usuario> ObtenerUsuarios()
-        //{
-        //    return usuarioQ.ObtenerUsuarios();
-        //}
-        
-
         // Método para validar datos del usuario
         private bool ValidarDatosUsuario(cls_Usuario usuario)
         {
