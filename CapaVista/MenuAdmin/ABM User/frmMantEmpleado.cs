@@ -27,8 +27,8 @@ namespace CapaVista.MenuAdmin.ABM_User
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             CargarEmpleadosForm();
+            LimpiarCampos();
         }
-
         
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -52,14 +52,18 @@ namespace CapaVista.MenuAdmin.ABM_User
             cls_EmpleadoManager empleadoManager = new cls_EmpleadoManager();
             empleadoManager.ModificarEmpleado(empleadoSelect);
 
+            CargarEmpleadosForm();
         }
+
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
-
+            chkEditar.Checked = true;
             btnGuardar.Visible = false;
             btnNewEmpleado.Visible = true;
+            LimpiarCampos();
         }
+
         private void btnNewEmpleado_Click(object sender, EventArgs e)
         {
             cls_Empleado empleadoNuevo = new cls_Empleado(
@@ -83,6 +87,7 @@ namespace CapaVista.MenuAdmin.ABM_User
             btnGuardar.Visible = true;
             btnNewEmpleado.Visible = false;
             CargarEmpleadosForm();
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -95,7 +100,10 @@ namespace CapaVista.MenuAdmin.ABM_User
 
         private void dgvEmpleados_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvEmpleados.CurrentRow != null)
+            btnGuardar.Visible = true;
+            btnNewEmpleado.Visible = false;
+
+            if (dgvEmpleados.CurrentRow != null)
             {
                 cls_Empleado empleadoSelect = dgvEmpleados.CurrentRow.DataBoundItem as cls_Empleado;
 

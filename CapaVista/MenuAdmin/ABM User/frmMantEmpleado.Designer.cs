@@ -424,7 +424,7 @@
             this.btnNewEmpleado.Name = "btnNewEmpleado";
             this.btnNewEmpleado.Size = new System.Drawing.Size(112, 23);
             this.btnNewEmpleado.TabIndex = 68;
-            this.btnNewEmpleado.Text = "Guardar";
+            this.btnNewEmpleado.Text = "Crear";
             this.btnNewEmpleado.UseVisualStyleBackColor = false;
             this.btnNewEmpleado.Visible = false;
             this.btnNewEmpleado.Click += new System.EventHandler(this.btnNewEmpleado_Click);
