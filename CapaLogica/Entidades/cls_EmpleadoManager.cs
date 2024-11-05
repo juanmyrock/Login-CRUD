@@ -3,6 +3,7 @@ using CapaEntidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net;
 
 namespace CapaLogica.Entidades
 {
@@ -11,9 +12,9 @@ namespace CapaLogica.Entidades
         private cls_EmpleadoQ datos_emp = new cls_EmpleadoQ();
 
         // Método para obtener empleados 
-        public DataTable VerEmpleados(int idEmpleado = 0)
+        public DataTable ObtenerEmpleados()
         {
-            return datos_emp.ReadEmpleado(idEmpleado);
+            return datos_emp.ReadAllEmpleados();
         }
 
         // Método para agregar un nuevo empleado
@@ -22,7 +23,6 @@ namespace CapaLogica.Entidades
             try
             {
                 datos_emp.CreateEmpleado(
-                    empleado.IdEmpleado,
                     empleado.Nombre,
                     empleado.Apellido,
                     empleado.IdSexo,
@@ -88,25 +88,61 @@ namespace CapaLogica.Entidades
             }
         }
 
-
-        public void AsignarValoresEmpleado(cls_Empleado empleado, string nombre, string apellido, int idSexo, int idTipoDni, string dni,
-                                            DateTime fechaNac, string email, string telefono, int idLocalidad, string calle,
-                                            int numeroCalle, int idCargo, bool estado)
+        public List<cls_Empleado> ObtenerListaEmpleados()
         {
-            empleado.nombre = nombre;
-            empleado.apellido = apellido;
-            empleado.idSexo = idSexo;
-            empleado.idTipoDni = idTipoDni;
-            empleado.dni = dni;
-            empleado.fechaNac = fechaNac;
-            empleado.email = email;
-            empleado.telefono = telefono;
-            empleado.idLocalidad = idLocalidad;
-            empleado.calle = calle;
-            empleado.numeroCalle = numeroCalle;
-            empleado.idCargo = idCargo;
-            empleado.estado = estado;
+            DataTable empleadosTable = ObtenerEmpleados();
+            var empleadosList = new List<cls_Empleado>();
+            
+            foreach (DataRow row in empleadosTable.Rows)
+            {
+                
+                var empleado = new cls_Empleado(
+                    Convert.ToInt32(row["id_empleado"]), 
+                    row["nombre"].ToString(), 
+                    row["apellido"].ToString(),
+                    Convert.ToInt32(row["id_sexo"]),
+                    Convert.ToInt32(row["id_tipodni"]), 
+                    row["dni"].ToString(),
+                    (DateTime)row["fecha_nac"], 
+                    row["email"].ToString(), 
+                    row["telefono"].ToString(), 
+                    Convert.ToInt32(row["id_localidad"]),
+                    row["calle"].ToString(), 
+                    Convert.ToInt32(row["numero_calle"]), 
+                    Convert.ToInt32(row["id_cargo"]), 
+                    Convert.ToBoolean(row["estado"])
+                );
+
+                
+                empleadosList.Add(empleado);
+
+            }
+            return empleadosList;
         }
+
+
+
+
+
+
+    //    public void AsignarValoresEmpleado(cls_Empleado empleado, string nombre, string apellido, int idSexo, int idTipoDni, string dni,
+    //                                        DateTime fechaNac, string email, string telefono, int idLocalidad, string calle,
+    //                                        int numeroCalle, int idCargo, bool estado)
+    //    {
+    //        empleado.nombre = nombre;
+    //        empleado.apellido = apellido;
+    //        empleado.idSexo = idSexo;
+    //        empleado.idTipoDni = idTipoDni;
+    //        empleado.dni = dni;
+    //        empleado.fechaNac = fechaNac;
+    //        empleado.email = email;
+    //        empleado.telefono = telefono;
+    //        empleado.idLocalidad = idLocalidad;
+    //        empleado.calle = calle;
+    //        empleado.numeroCalle = numeroCalle;
+    //        empleado.idCargo = idCargo;
+    //        empleado.estado = estado;
+    //    }
 
     }
 }

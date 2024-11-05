@@ -42,5 +42,23 @@ namespace CapaEntidades
             IdCargo = idCargo;
             Estado = estado;
         }
+        public cls_Empleado(string nombre, string apellido, int idSexo, int idTipoDni, string dni,
+                            DateTime fechaNac, string email, string telefono, int idLocalidad, string calle,
+                            int numeroCalle, int idCargo, bool estado)
+        {
+            Nombre = nombre;
+            Apellido = apellido;
+            IdSexo = idSexo;
+            IdTipoDni = idTipoDni;
+            Dni = dni;
+            FechaNac = fechaNac;
+            Email = email;
+            Telefono = telefono;
+            IdLocalidad = idLocalidad;
+            Calle = calle;
+            NumeroCalle = numeroCalle;
+            IdCargo = idCargo;
+            Estado = estado;
+        }
     }
 }

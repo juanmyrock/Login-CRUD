@@ -58,13 +58,13 @@
             this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.cmbTipoDNI = new System.Windows.Forms.ComboBox();
             this.lblMantEmp = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.chkEditar = new System.Windows.Forms.CheckBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnNewEmpleado = new System.Windows.Forms.Button();
             this.grpBoxDatosEmp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -79,6 +79,7 @@
             this.btnCargarLista.TabIndex = 51;
             this.btnCargarLista.Text = "Cargar Lista";
             this.btnCargarLista.UseVisualStyleBackColor = true;
+            this.btnCargarLista.Click += new System.EventHandler(this.btnCargarLista_Click);
             // 
             // btnRefresh
             // 
@@ -88,6 +89,7 @@
             this.btnRefresh.TabIndex = 50;
             this.btnRefresh.Text = "Refrescar";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // grpBoxDatosEmp
             // 
@@ -346,15 +348,6 @@
             this.lblMantEmp.TabIndex = 48;
             this.lblMantEmp.Text = "Mantenimiento de Empleado";
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(878, 603);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(112, 23);
-            this.btnModificar.TabIndex = 47;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
             // dgvEmpleados
             // 
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -367,6 +360,7 @@
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(952, 324);
             this.dgvEmpleados.TabIndex = 46;
+            this.dgvEmpleados.SelectionChanged += new System.EventHandler(this.dgvEmpleados_SelectionChanged);
             // 
             // btnCerrar
             // 
@@ -392,6 +386,7 @@
             this.chkEditar.TabIndex = 64;
             this.chkEditar.Text = "Editar: ";
             this.chkEditar.UseVisualStyleBackColor = true;
+            this.chkEditar.CheckedChanged += new System.EventHandler(this.chkEditar_CheckedChanged);
             // 
             // btnNuevo
             // 
@@ -401,6 +396,7 @@
             this.btnNuevo.TabIndex = 65;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEliminar
             // 
@@ -419,12 +415,26 @@
             this.btnGuardar.TabIndex = 67;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnNewEmpleado
+            // 
+            this.btnNewEmpleado.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnNewEmpleado.Location = new System.Drawing.Point(878, 603);
+            this.btnNewEmpleado.Name = "btnNewEmpleado";
+            this.btnNewEmpleado.Size = new System.Drawing.Size(112, 23);
+            this.btnNewEmpleado.TabIndex = 68;
+            this.btnNewEmpleado.Text = "Guardar";
+            this.btnNewEmpleado.UseVisualStyleBackColor = false;
+            this.btnNewEmpleado.Visible = false;
+            this.btnNewEmpleado.Click += new System.EventHandler(this.btnNewEmpleado_Click);
             // 
             // frmMantEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 649);
+            this.Controls.Add(this.btnNewEmpleado);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
@@ -434,7 +444,6 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.grpBoxDatosEmp);
             this.Controls.Add(this.lblMantEmp);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvEmpleados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMantEmpleado";
@@ -479,12 +488,12 @@
         private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.ComboBox cmbTipoDNI;
         private System.Windows.Forms.Label lblMantEmp;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.CheckBox chkEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnNewEmpleado;
     }
 }

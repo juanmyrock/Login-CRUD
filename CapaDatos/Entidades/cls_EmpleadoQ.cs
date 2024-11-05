@@ -14,17 +14,14 @@ namespace CapaDatos.Entidades
     public class cls_EmpleadoQ : cls_EjecutarQ
     {
         //Método para obtener la tabla de empleados
-        public DataTable ReadEmpleado(int idEmpleado)
+        public DataTable ReadAllEmpleados()
         {
             DataTable resultado = null;
             try
             {
-                string sSQL = "SELECT * FROM Empleados WHERE id_empleado = @id_empleado";
-                List<SqlParameter> listaParametros = new List<SqlParameter>
-                {
-                    new SqlParameter("@id_empleado", idEmpleado)
-                };
-                resultado = ConsultaRead(sSQL, listaParametros);
+                string sSQL = "SELECT * FROM Empleados";
+                
+                resultado = ConsultaRead(sSQL,new List<SqlParameter>());
             }
             catch (SqlException ex)
             {
@@ -42,7 +39,7 @@ namespace CapaDatos.Entidades
 
 
         // Método para agregar un empleado en la base de datos
-        public void CreateEmpleado(int idEmpleado, string nombre, string apellido, int idSexo, int idTipoDni, string dni,
+        public void CreateEmpleado(string nombre, string apellido, int idSexo, int idTipoDni, string dni,
                             DateTime fechaNac, string email, string telefono, int idLocalidad, string calle,
                             int numeroCalle, int idCargo, bool estado)
         {

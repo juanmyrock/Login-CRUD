@@ -18,6 +18,7 @@ namespace CapaVista
         {
             InitializeComponent();
             picShowPass.BringToFront(); //que inicie con el logo para habilitar la contraseña Show (que se vea)
+
         }
 
 
@@ -147,53 +148,53 @@ namespace CapaVista
         }
 
 
-        //private void btnAcceder_Click(object sender, EventArgs e) //para saltear las validaciones del login mientras diseñamos los forms
-        //{
-        //    this.DialogResult = DialogResult.OK;
-        //}
-
-        private void btnAcceder_Click(object sender, EventArgs e)
+        private void btnAcceder_Click(object sender, EventArgs e) //para saltear las validaciones del login mientras diseñamos los forms
         {
-            if (!ValidarCampos())
-            {
-                return; // Validación de campos
-            }
-
-            string usuario = txtUsers.Text;
-            string contraseña = txtPass.Text;
-
-            try
-            {
-                // Verifica si el usuario está bloqueado antes de intentar iniciar sesión
-                if (loginManager.UsuarioBloqueado(usuario))
-                {
-                    MsgError("User bloqueado. Contacte al administrador.");
-                    return; // Sale si el usuario está bloqueado
-                }
-
-                // Intenta iniciar sesión
-                if (loginManager.LoginUser(usuario, contraseña))
-                {
-                    MessageBox.Show("¡Ingreso Exitoso!", "Acceso Permitido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK; // Cierra el formulario con resultado OK
-                }
-                else
-                {
-                    // Incrementa el intento fallido dentro de LoginUser, no aquí.
-                    int intentosRestantes = loginManager.ObtenerIntentosRestantes(usuario);
-                    MsgError($"User/Contraseña incorrectos. Intentos restantes: {intentosRestantes}");
-
-                    if (intentosRestantes <= 0)
-                    {
-                        MsgError("Has alcanzado el número máximo de intentos. El usuario ha sido bloqueado.");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MsgError("Error de acceso: " + ex.Message);
-            }
+            this.DialogResult = DialogResult.OK;
         }
+
+        //private void btnAcceder_Click(object sender, EventArgs e)
+        //{
+        //    if (!ValidarCampos())
+        //    {
+        //        return; // Validación de campos
+        //    }
+
+        //    string usuario = txtUsers.Text;
+        //    string contraseña = txtPass.Text;
+
+        //    try
+        //    {
+        //        // Verifica si el usuario está bloqueado antes de intentar iniciar sesión
+        //        if (loginManager.UsuarioBloqueado(usuario))
+        //        {
+        //            MsgError("User bloqueado. Contacte al administrador.");
+        //            return; // Sale si el usuario está bloqueado
+        //        }
+
+        //        // Intenta iniciar sesión
+        //        if (loginManager.LoginUser(usuario, contraseña))
+        //        {
+        //            MessageBox.Show("¡Ingreso Exitoso!", "Acceso Permitido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            this.DialogResult = DialogResult.OK; // Cierra el formulario con resultado OK
+        //        }
+        //        else
+        //        {
+        //            // Incrementa el intento fallido dentro de LoginUser, no aquí.
+        //            int intentosRestantes = loginManager.ObtenerIntentosRestantes(usuario);
+        //            MsgError($"User/Contraseña incorrectos. Intentos restantes: {intentosRestantes}");
+
+        //            if (intentosRestantes <= 0)
+        //            {
+        //                MsgError("Has alcanzado el número máximo de intentos. El usuario ha sido bloqueado.");
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MsgError("Error de acceso: " + ex.Message);
+        //    }
+        //}
 
 
 

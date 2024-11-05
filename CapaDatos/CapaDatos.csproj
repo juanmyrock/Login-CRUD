@@ -49,6 +49,7 @@
     <Compile Include="Entidades\cls_LoginQ.cs" />
     <Compile Include="Entidades\cls_UsuarioQ.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\cls_LlenarCombosQ.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">

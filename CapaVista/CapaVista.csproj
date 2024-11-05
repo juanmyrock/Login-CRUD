@@ -136,6 +136,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaComun\CapaComun.csproj">
+      <Project>{ab267181-5ec9-4896-9d9c-135e4c52ef34}</Project>
+      <Name>CapaComun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{3a5e85d9-44fd-41ec-9ac2-ff56227e6efb}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
       <Project>{1fa34af2-0245-4411-b0ab-0a7ac703f7be}</Project>
       <Name>CapaLogica</Name>
