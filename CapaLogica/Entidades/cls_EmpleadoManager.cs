@@ -89,24 +89,24 @@ namespace CapaLogica.Entidades
         }
 
 
-    //    public void AsignarValoresEmpleado(cls_Empleado empleado, string nombre, string apellido, int idSexo, int idTipoDni, string dni,
-    //                                        DateTime fechaNac, string email, string telefono, int idLocalidad, string calle,
-    //                                        int numeroCalle, int idCargo, bool estado)
-    //    {
-    //        empleado.nombre = nombre;
-    //        empleado.apellido = apellido;
-    //        empleado.idSexo = idSexo;
-    //        empleado.idTipoDni = idTipoDni;
-    //        empleado.dni = dni;
-    //        empleado.fechaNac = fechaNac;
-    //        empleado.email = email;
-    //        empleado.telefono = telefono;
-    //        empleado.idLocalidad = idLocalidad;
-    //        empleado.calle = calle;
-    //        empleado.numeroCalle = numeroCalle;
-    //        empleado.idCargo = idCargo;
-    //        empleado.estado = estado;
-    //    }
+        public void AsignarValoresEmpleado(cls_Empleado empleado, string nombre, string apellido, int idSexo, int idTipoDni, string dni,
+                                            DateTime fechaNac, string email, string telefono, int idLocalidad, string calle,
+                                            int numeroCalle, int idCargo, bool estado)
+        {
+            empleado.nombre = nombre;
+            empleado.apellido = apellido;
+            empleado.idSexo = idSexo;
+            empleado.idTipoDni = idTipoDni;
+            empleado.dni = dni;
+            empleado.fechaNac = fechaNac;
+            empleado.email = email;
+            empleado.telefono = telefono;
+            empleado.idLocalidad = idLocalidad;
+            empleado.calle = calle;
+            empleado.numeroCalle = numeroCalle;
+            empleado.idCargo = idCargo;
+            empleado.estado = estado;
+        }
 
     }
 }
